@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Farmarcia from './componets/Farmarcia'
 import Pages1 from './componets/Pages1'
@@ -11,12 +9,25 @@ import Pages4 from './componets/Pages4'
 
 
 function App() {
-  
+  const [pagina, setPagina] = useState(<Farmarcia/>)
 
   return (
     <>
 
-<Farmarcia/>
+<header>
+<img src="farmarcia-logo-pq.png" alt="logo" />
+    <p>FARMÁRCIA</p> 
+    
+<button onClick={() => {(setPagina(<Pages1/>))} } className='page'>ENTRAR</button>
+<button onClick={() => {(setPagina(<Pages2/>))} } className='page'>CADASTRAR</button>
+<button onClick={() => {(setPagina(<Pages3/>))} } className='page'>SOBRE NÓS</button>
+<button onClick={() => {(setPagina(<Pages4/>))} } className='page'>CONTATOS</button>
+<button onClick={() => {(setPagina(<Farmarcia/>))} } className='page'>VOLTAR</button>
+    </header>
+ 
+   
+
+{pagina}
 
 
     </>
